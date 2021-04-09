@@ -20,6 +20,8 @@ class Rooms:
     def add_song_to_queue(self, song):
         self.song_queue.append(song)
 
+    def remove_songs_from_queue(self, song):
+        self.song_queue.remove(song)
     
 
    

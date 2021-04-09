@@ -53,6 +53,10 @@ class TestRooms(unittest.TestCase):
         self.rooms_1.add_song_to_queue(self.songs_2)
         self.assertEqual(2, self.rooms_1.songs_in_queue())
 
+    def tests_remove_songs_from_queue(self):
+        self.rooms_1.add_song_to_queue(self.songs_1)
+        self.rooms_1.remove_songs_from_queue(self.songs_1)
+        self.assertEqual(0, self.rooms_1.songs_in_queue())
 
     
 
