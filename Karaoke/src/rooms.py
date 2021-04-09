@@ -1,15 +1,18 @@
 
 class Rooms:
-    def __init__(self, room_name, capacity):
+    def __init__(self, room_name, capacity, entry_fee):
         self.room_name = room_name
         self.occupants = []
         self.song_queue = []
         self.capacity = capacity
+        self.entry_fee = entry_fee
+
 
     def number_in_room(self):
         return len(self.occupants)
 
     def add_person_to_room(self, guest):
+        #if not self.room_has_space
         self.occupants.append(guest)
 
     def remove_person(self, guest):
@@ -23,6 +26,14 @@ class Rooms:
 
     def remove_songs_from_queue(self, song):
         self.song_queue.remove(song)
+
+    def room_has_space(self):
+        if len(self.occupants) < self.capacity:
+            return "Room has space"
+        else: 
+            return "Room is full"
+
+
     
 
    

@@ -7,8 +7,8 @@ class TestRooms(unittest.TestCase):
 
  
     def setUp(self):
-        self.rooms_1 = Rooms("Blue Room", 10)
-        self.rooms_2 = Rooms("Green Room", 8)
+        self.rooms_1 = Rooms("Blue Room", 4, 1)
+        self.rooms_2 = Rooms("Green Room", 8, 1)
 
         self.guest_1 = Guest("Kieran", 10)
         self.guest_2 = Guest("Aidan", 8)
@@ -59,9 +59,18 @@ class TestRooms(unittest.TestCase):
         self.assertEqual(0, self.rooms_1.songs_in_queue())
 
     def tests_room_has_capacity(self):
-        self.assertEqual(10, self.rooms_1.capacity)
+        self.assertEqual(4, self.rooms_1.capacity)
 
-    
+    def tests_if_room_has_space(self):
+        self.assertEqual("Room has space", self.rooms_1.room_has_space())
+
+    def test_if_room_is_full(self):
+        self.rooms_1.occupants = ["Kieran", "Aidan", "Gemma", "Bill", "Dave", "Spencer"]
+        self.assertEqual("Room is full", self.rooms_1.room_has_space())
+
+
+    def test_if_room_has_entry_fee(self):
+        self.assertEqual(1, self.rooms_1.entry_fee)    
 
   
 
