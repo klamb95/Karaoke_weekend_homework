@@ -17,6 +17,9 @@ class Rooms:
     def songs_in_queue(self):
         return len(self.song_queue)
 
+    def add_song_to_queue(self, song):
+        self.song_queue.append(song)
+
     
 
    
