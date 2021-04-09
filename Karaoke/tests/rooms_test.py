@@ -16,11 +16,16 @@ class TestRooms(unittest.TestCase):
 
     def test_rooms_number_starts_at_0(self):
         self.assertEqual(0, self.rooms.number_in_room())
+
     #PDA example
     def test_add_person_to_room(self):
         self.rooms.add_person_to_room(self.guest_1)
         self.assertEqual(1, self.rooms.number_in_room())
 
+    def test_remove_person_from_room(self):
+        self.rooms.add_person_to_room(self.guest_1)
+        self.rooms.remove_person(self.guest_1)
+        self.assertEqual(0, self.rooms.number_in_room())
 
   
 

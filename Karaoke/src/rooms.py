@@ -8,10 +8,15 @@ class Rooms:
     def number_in_room(self):
         return len(self.occupants)
 
-    
-
     def add_person_to_room(self, guest):
         self.occupants.append(guest)
+
+    def remove_person(self, guest):
+        self.occupants.remove(guest)
+
+   
+
+
        
 
 
