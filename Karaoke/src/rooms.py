@@ -34,8 +34,11 @@ class Rooms:
         else: 
             return "Room is full"
 
-        
+    # def increase_till(self):
+    #      self.till += self.entry_fee        
     
+
+     
 
     
 

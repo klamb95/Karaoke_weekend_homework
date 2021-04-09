@@ -26,6 +26,8 @@ class TestGuest(unittest.TestCase):
         rooms_1 = Rooms("Blue Room", 4, 20.00)
         self.guest.pay_entry_fee(rooms_1)
         self.assertEqual(9, self.guest.wallet)
+
+    
  
 
     
