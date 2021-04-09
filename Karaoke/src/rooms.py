@@ -3,7 +3,7 @@ class Rooms:
     def __init__(self, room_name):
         self.room_name = room_name
         self.occupants = []
-        self.song_playing = []
+        self.song_queue = []
 
     def number_in_room(self):
         return len(self.occupants)
@@ -13,6 +13,11 @@ class Rooms:
 
     def remove_person(self, guest):
         self.occupants.remove(guest)
+
+    def songs_in_queue(self):
+        return len(self.song_queue)
+
+    
 
    
 

@@ -27,6 +27,9 @@ class TestRooms(unittest.TestCase):
         self.rooms.remove_person(self.guest_1)
         self.assertEqual(0, self.rooms.number_in_room())
 
+    def test_songs_starts_at_0(self):
+        self.assertEqual(0, self.rooms.songs_in_queue())
+
   
 
 
