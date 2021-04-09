@@ -44,9 +44,15 @@ class TestRooms(unittest.TestCase):
     def test_songs_starts_at_0(self):
         self.assertEqual(0, self.rooms_1.songs_in_queue())
 
-    def tests_add_song_to_list(self):
+    def tests_add_song_to_queue(self):
          self.rooms_1.add_song_to_queue(self.songs_1)
          self.assertEqual(1, self.rooms_1.songs_in_queue())
+
+    def tests_add_songs_to_queue(self):
+        self.rooms_1.add_song_to_queue(self.songs_1)
+        self.rooms_1.add_song_to_queue(self.songs_2)
+        self.assertEqual(2, self.rooms_1.songs_in_queue())
+
 
     
 
