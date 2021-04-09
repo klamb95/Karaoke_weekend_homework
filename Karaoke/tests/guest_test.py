@@ -21,7 +21,11 @@ class TestGuest(unittest.TestCase):
     def test_customer_cant_afford(self):
         self.poor_guest = Guest("Adam", 0)
         self.assertEqual(False, self.poor_guest.customer_can_afford(self.rooms_1))
-    
+
+    def test_customer_can_pay_entry(self):
+        rooms_1 = Rooms("Blue Room", 4, 20.00)
+        self.guest.pay_entry_fee(rooms_1)
+        self.assertEqual(9, self.guest.wallet)
  
 
     
