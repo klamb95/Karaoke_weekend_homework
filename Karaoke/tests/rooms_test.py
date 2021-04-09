@@ -7,8 +7,8 @@ class TestRooms(unittest.TestCase):
 
  
     def setUp(self):
-        self.rooms_1 = Rooms("Blue Room")
-        self.rooms_2 = Rooms("Green Room")
+        self.rooms_1 = Rooms("Blue Room", 10)
+        self.rooms_2 = Rooms("Green Room", 8)
 
         self.guest_1 = Guest("Kieran", 10)
         self.guest_2 = Guest("Aidan", 8)
@@ -57,6 +57,9 @@ class TestRooms(unittest.TestCase):
         self.rooms_1.add_song_to_queue(self.songs_1)
         self.rooms_1.remove_songs_from_queue(self.songs_1)
         self.assertEqual(0, self.rooms_1.songs_in_queue())
+
+    def tests_room_has_capacity(self):
+        self.assertEqual(10, self.rooms_1.capacity)
 
     
 
