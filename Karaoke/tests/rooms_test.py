@@ -69,8 +69,12 @@ class TestRooms(unittest.TestCase):
         self.assertEqual("Room is full", self.rooms_1.room_has_space())
 
 
-    def test_if_room_has_entry_fee(self):
-        self.assertEqual(20.00, self.rooms_1.till)    
+    def test_if_room_has_till(self):
+        self.assertEqual(20.00, self.rooms_1.till)
+
+    def test_can_take_entry_fee(self):
+        self.rooms_1.take_entry_fee(guest_1)
+        self.assertEqual(21.00, self.rooms_1.till)
 
   
 

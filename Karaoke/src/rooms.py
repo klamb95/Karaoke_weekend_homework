@@ -6,6 +6,7 @@ class Rooms:
         self.song_queue = []
         self.capacity = capacity
         self.till = till
+        self.entry_fee = 1
 
 
     def number_in_room(self):
@@ -32,6 +33,9 @@ class Rooms:
             return "Room has space"
         else: 
             return "Room is full"
+
+        
+    
 
     
 
