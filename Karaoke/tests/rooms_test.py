@@ -7,8 +7,8 @@ class TestRooms(unittest.TestCase):
 
  
     def setUp(self):
-        self.rooms_1 = Rooms("Blue Room", 4, 1)
-        self.rooms_2 = Rooms("Green Room", 8, 1)
+        self.rooms_1 = Rooms("Blue Room", 4, 20.00)
+        self.rooms_2 = Rooms("Green Room", 8, 20.00)
 
         self.guest_1 = Guest("Kieran", 10)
         self.guest_2 = Guest("Aidan", 8)
@@ -70,7 +70,7 @@ class TestRooms(unittest.TestCase):
 
 
     def test_if_room_has_entry_fee(self):
-        self.assertEqual(1, self.rooms_1.entry_fee)    
+        self.assertEqual(20.00, self.rooms_1.till)    
 
   
 

@@ -1,11 +1,11 @@
 
 class Rooms:
-    def __init__(self, room_name, capacity, entry_fee):
+    def __init__(self, room_name, capacity, till):
         self.room_name = room_name
         self.occupants = []
         self.song_queue = []
         self.capacity = capacity
-        self.entry_fee = entry_fee
+        self.till = till
 
 
     def number_in_room(self):
@@ -32,6 +32,8 @@ class Rooms:
             return "Room has space"
         else: 
             return "Room is full"
+
+    
 
 
     
