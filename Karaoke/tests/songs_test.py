@@ -9,3 +9,6 @@ class TestSongs(unittest.TestCase):
 
     def test_songs_has_title(self):
         self.assertEqual("Dive", self.songs.title)
+
+    def test_songs_has_artist(self):
+        self.assertEqual("Ed Sheeran", self.songs.artist)
