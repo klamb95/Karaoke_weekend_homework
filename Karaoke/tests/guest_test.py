@@ -6,7 +6,7 @@ from src.rooms import Rooms
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest = Guest("Kieran", 10)
+        self.guest = Guest("Kieran", 10, "Fix you")
         self.rooms_1 = Rooms("Blue Room", 4, 20.00)
 
     def test_customer_has_name(self):
@@ -19,7 +19,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(True, self.guest.customer_can_afford(self.rooms_1))
 
     def test_customer_cant_afford(self):
-        self.poor_guest = Guest("Adam", 0)
+        self.poor_guest = Guest("Adam", 0, "Fix You")
         self.assertEqual(False, self.poor_guest.customer_can_afford(self.rooms_1))
 
     def test_customer_can_pay_entry(self):
@@ -27,11 +27,10 @@ class TestGuest(unittest.TestCase):
         self.guest.pay_entry_fee(rooms_1)
         self.assertEqual(9, self.guest.wallet)
 
-    # def test_till_increase(self):
-    #     rooms_1 = Rooms("Blue Room", 4, 20.00)
-    #     self.guest.put_money_in_till
-    #     self.assertEqual(21.00, self.rooms_1.till)
+    def test_customer_has_favourite_song(self):
+        self.assertEqual("Fix you", self.guest.favourite_song)
 
+    
     
  
 

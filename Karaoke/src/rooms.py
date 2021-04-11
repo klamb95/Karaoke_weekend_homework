@@ -15,8 +15,9 @@ class Rooms:
     def add_person_to_room(self, guest):
         if len(self.occupants) < self.capacity:
             self.occupants.append(guest)
+            self.till += self.entry_fee
+            
        
-
     def remove_person(self, guest):
         self.occupants.remove(guest)
 
@@ -35,14 +36,13 @@ class Rooms:
         else: 
             return "Room is full"
 
-    # def check_if_room_has_space_for_guest(self, guest):
-    #     if len(self.occupants) < self.capacity:
-    #         self.occupants.append(guest)
-    #     return 
+    def customer_fav_song_on_playlist(self, guest):
+        if guest.favourite_song in self.songs_in_queue:
+            return "Wohoo"
+        else:
+            return "Not in queue"
 
-
-    # def increase_till(self):
-    #      self.till += self.entry_fee        
+         
     
 
      

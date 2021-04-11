@@ -10,8 +10,8 @@ class TestRooms(unittest.TestCase):
         self.rooms_1 = Rooms("Blue Room", 4, 20.00)
         self.rooms_2 = Rooms("Green Room", 8, 20.00)
 
-        self.guest_1 = Guest("Kieran", 10)
-        self.guest_2 = Guest("Aidan", 8)
+        self.guest_1 = Guest("Kieran", 10, "Dive")
+        self.guest_2 = Guest("Aidan", 8, "Many of horror")
 
         self.songs_1 = Songs("Dive", "Ed Sheeran")
         self.songs_2 = Songs("Fix You", "Coldplay")
@@ -78,9 +78,14 @@ class TestRooms(unittest.TestCase):
         self.rooms_1.add_person_to_room(self.guest_2)
         self.assertEqual(4, self.rooms_1.number_in_room())
 
-    #still to fix!!
-    # def test_if_increase_till(self):
-    #     self.assertEqual(21.00, self.rooms_1.increase_till())
+    
+    def test_if_increase_till(self):
+        self.rooms_1.add_person_to_room(self.guest_1)
+        self.assertEqual(21.00, self.rooms_1.till)
+
+    def test_guest_fav_song_in_queue(self):
+        self.rooms_1.add_song_to_queue(self.songs_1)
+        self.assertEqual("Wohoo", self.rooms_1.customer_fav_song_on_playlist(self.guest_1))
 
   
 
