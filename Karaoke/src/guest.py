@@ -9,6 +9,9 @@ class Guest:
 
     def pay_entry_fee(self, room):
         self.wallet -= room.entry_fee
+
+    def put_money_in_till(self, room):
+        rooms.till += room.entry_fee
         
 
     

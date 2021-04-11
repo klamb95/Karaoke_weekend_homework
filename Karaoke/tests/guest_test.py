@@ -27,6 +27,11 @@ class TestGuest(unittest.TestCase):
         self.guest.pay_entry_fee(rooms_1)
         self.assertEqual(9, self.guest.wallet)
 
+    # def test_till_increase(self):
+    #     rooms_1 = Rooms("Blue Room", 4, 20.00)
+    #     self.guest.put_money_in_till
+    #     self.assertEqual(21.00, self.rooms_1.till)
+
     
  
 

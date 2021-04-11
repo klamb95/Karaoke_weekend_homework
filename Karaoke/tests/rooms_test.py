@@ -14,10 +14,7 @@ class TestRooms(unittest.TestCase):
         self.guest_2 = Guest("Aidan", 8)
 
         self.songs_1 = Songs("Dive", "Ed Sheeran")
-        self.songs_2 = Songs("fix You", "Coldplay")
-
-
-        
+        self.songs_2 = Songs("Fix You", "Coldplay")
 
     def test_rooms_has_name(self):
         self.assertEqual("Blue Room", self.rooms_1.room_name)
@@ -71,6 +68,15 @@ class TestRooms(unittest.TestCase):
 
     def test_if_room_has_till(self):
         self.assertEqual(20.00, self.rooms_1.till)
+
+    def test_if_add_person_to_full_room(self):
+        self.rooms_1.add_person_to_room(self.guest_1)
+        self.rooms_1.add_person_to_room(self.guest_2)
+        self.rooms_1.add_person_to_room(self.guest_1)
+        self.rooms_1.add_person_to_room(self.guest_2)
+        self.rooms_1.add_person_to_room(self.guest_1)
+        self.rooms_1.add_person_to_room(self.guest_2)
+        self.assertEqual(4, self.rooms_1.number_in_room())
 
     #still to fix!!
     # def test_if_increase_till(self):
